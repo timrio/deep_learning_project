@@ -1,2 +1,5 @@
 venv/
 data/
+data/raw_data/
+data/pre_processed_data/
+**/__pycache__

@@ -4,7 +4,7 @@ import torch
 from torch.utils.data import Dataset
 
 
-class EegDataset(Dataset):
+class MultiTaperSet(Dataset):
     def __init__(self,
                  device,
                  features_eeg_path = './data/pre_processed_data/Multitaper_eeg_train.npy',
@@ -15,6 +15,7 @@ class EegDataset(Dataset):
         # read features (ie multitaper)
         self.features_eeg = torch.tensor(np.abs(np.load(features_eeg_path)))
         self.features_position = torch.tensor(np.abs(np.load(features_position_path)))
+        self.device = device
 
         # read target
         if target_path:
@@ -27,10 +28,10 @@ class EegDataset(Dataset):
 
 
     def __getitem__(self, idx):
-        features_eeg = self.features_eeg[idx]
-        features_position = self.features_position[idx].to(device, dtype=torch.float)
+        features_eeg = self.features_eeg[idx].to(self.device, dtype=torch.float)
+        features_position = self.features_position[idx].to(self.device, dtype=torch.float)
            
         if self.target_path is not None:
-          target = torch.tensor(int(self.target[idx])).to(device)
+          target = torch.tensor(int(self.target[idx])).to(self.device)
           return (features_eeg, features_position), target
         return (features_eeg, features_position)

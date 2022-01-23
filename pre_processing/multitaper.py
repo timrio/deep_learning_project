@@ -76,25 +76,20 @@ def create_and_save_multitapers(features_df, saving_path, position = False):
 
   print(f"saving mutlitaper to: {saving_path}")
   np.save(saving_path, total_multi_taper)
-
-  return ()
+  return()
 
 
 
 def compute_tapers():
-    features_eeg_train,features_position_train,features_eeg_test,features_position_test = load_data()
+  print("load data")
+  features_eeg_train,features_position_train,features_eeg_test,features_position_test = load_data()
 
-    if len(os.listdir('./data/pre_processed_data')) == 0:
-        create_and_save_multitapers(features_position_test, './data/pre_processed_data/Multitaper_position_test', position = True)
-        create_and_save_multitapers(features_position_train, './data/pre_processed_data/Multitaper_position_train', position = True)
-        create_and_save_multitapers(features_eeg_test, './data/pre_processed_data/Multitaper_eeg_test', position = False)
-        create_and_save_multitapers(features_eeg_train, './data/pre_processed_data/Multitaper_eeg_train', position = False)
-    return()
-    
-
-
-
-
-
-
-compute_tapers()
+  if len(os.listdir('./data/pre_processed_data')) == 0:
+    print('computing tapers')
+    create_and_save_multitapers(features_position_test, './data/pre_processed_data/Multitaper_position_test', position = True)
+    create_and_save_multitapers(features_position_train, './data/pre_processed_data/Multitaper_position_train', position = True)
+    create_and_save_multitapers(features_eeg_test, './data/pre_processed_data/Multitaper_eeg_test', position = False)
+    create_and_save_multitapers(features_eeg_train, './data/pre_processed_data/Multitaper_eeg_train', position = False)
+  else:
+    print("tapers already computed")
+  return()

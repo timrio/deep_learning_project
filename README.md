@@ -41,18 +41,19 @@ The test data set contains a mere 29 images.
 └───src
     │   setup.py
     │   
-    ├───sign_detector
-    │   │   classifiers.py
-    │   │   loader.py
-    │   │   processing.py
-    │   │   
-    │   └───__pycache__
-    │   
-    └───sign_detector.egg-info
+    ├───sleep_classif
+    │   │   CNNadvanced.py
+    │   │   CNNmodel.py
+    │   │   CNNmultitaper.py
+    │   │   dataloaders.py
+    │   │   LSTMConv.py
+    │   │   preprocessing.py
+    │   │   trainer.py
+    
 
    
 ```
 
 ## Run code
 
-Run code by running `run_models.ipynb`
+Run the different models and data processings by running `run_models.ipynb`

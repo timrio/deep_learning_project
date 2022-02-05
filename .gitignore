@@ -3,3 +3,7 @@ data/
 data/raw_data/
 data/pre_processed_data/
 **/__pycache__
+src/build/
+src/dist/
+src/sleep_classif.egg-info
+

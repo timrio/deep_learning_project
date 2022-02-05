@@ -32,23 +32,14 @@ class Trainer():
         batch_id = 0
         losses = []
 
-        for (features, target) in tqdm(self.data_loader):
-            
-            
-            
+        for (features, target) in tqdm(self.data_loader):    
             self.model.train()
-            
             self.optimizer.zero_grad()
-            
             predictions = self.model(features)
-            
             loss = self.criterion(predictions, target)
-
             losses.append(float(loss))
-
             loss.backward()
             self.optimizer.step()
-            
             batch_id+=1
 
             

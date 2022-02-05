@@ -2,17 +2,30 @@
 
 ## Introduction
 
-The aim of our project is to decode sign language with SIFT. Each letter of the alphabet corresponds to a sign : The American Sign Language letter with hand gestures includes 24 letters (excluding J and Z which require motion). We implement an algorithm taking in argument an image of a sign, and returning the corresponding letter. This project is very important, in order to help deaf and hard-of-hearing communicate in our society where being heard is the norm.
+We propose to use Dreem 2 headband data to perform sleep stage scoring on 30 seconds epochs of biophysiological signals using deep learning techniques.
+This project was done in the context of the Deep Learning course from the MVA master and CentraleSupelec.  
+
 
 ## Data
 
-The data can be downloaded [here](https://www.kaggle.com/grassknoted/asl-alphabet), and must be unzip and moved to `.\Data\raw_data`
+The data can be downloaded [here](https://www.kaggle.com/c/dreem-3-sleep-staging-challenge-2021/data), and must be unzip and moved to `.\Data\raw_data`
 
-It consists of a collection of images of alphabets from the American Sign Language, separated in 29 folders which represent the various classes.
+The data is separated between the differents signals recorded by the Dreem headband. Signal is shapes in windows of 30 seconds: - train dataset has 15000 windows
+- test dataset has 6000 windows
 
-The training data set contains 87,000 images which are 200x200 pixels. There are 29 classes, of which 26 are for the letters A-Z and 3 classes for  *SPACE* , *DELETE* and  *NOTHING* .
+Electroencephalogram is measured at 5 differents locations of the head (eeg_1, eeg_2, eeg_4,... eeg_6). The sampling frequency is 50 Hz.
 
-The test data set contains a mere 29 images.
+Accelerometer ([x/y/z]) channels are sampled at 10Hz
+
+eeg_1 - EEG (derivation F7-O1) sampled at 50 Hz -> 1500 values
+eeg_2 - EEG (derivation F8-O2) sampled at 50 Hz -> 1500 values
+eeg_4 - EEG (derivation F8-F7) sampled at 50 Hz -> 1500 values
+eeg_5 - EEG (derivation F8-O1) sampled at 50 Hz -> 1500 values
+eeg_6 - EEG (derivation F7-O2) position sampled at 50 Hz -> 1500 values
+x - Accelerometer along x axis sampled at 10 Hz -> 300 values
+y - Accelerometer along y axis sampled at 10 Hz -> 300 values
+z - Accelerometer along z axis sampled at 10 Hz -> 300 values
+
 
 ## Structure
 

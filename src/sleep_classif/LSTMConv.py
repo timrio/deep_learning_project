@@ -1,8 +1,8 @@
+### Implementation inspired from https://www.kaggle.com/prith189/starter-code-for-3rd-place-solution
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as func
-
-#Implementation inspired from https://www.kaggle.com/prith189/starter-code-for-3rd-place-solution
 
 class SepConv1d(nn.Module):
     """Implementes a 1-d convolution with 'batteries included'.

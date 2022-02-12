@@ -1,3 +1,6 @@
+### The following code has been adapated from:
+### Ilia Zaitsev. Deep time series classification. https://www.kaggle.com/purplejester/pytorch-deep-time-series-classification, 2019.
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd

@@ -70,4 +70,4 @@ z - Accelerometer along z axis sampled at 10 Hz -> 300 values
 ## Run code
 
 Run the different models and data processings by running `run_models.ipynb`
-To run the attnsleep model please refer to https://github.com/emadeldeen24/AttnSleep
+To run the attnsleep model please refer to https://github.com/emadeldeen24/AttnSleep (you need to convert the eeg signals files to npz files before running the model)
